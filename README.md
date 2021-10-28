@@ -75,3 +75,64 @@ Then, I kept the private key `KeyPair.pem` on my private repository.
 - "Create an instance"
 - "Display the instance"
 
+#### Create a route table
+
+- "Service", "Networking and content delivery", "VPC"
+- "Route table"
+- "Create a route table"
+- Set the route table name `RouteTable`
+- Deploy the route table on the VPC `HelloAWS`
+- "Edit routes"
+
+Then, an internet gateway was needed.
+I guessed that another internet gateway is already attached to the VPC.
+So, I tried to delete all internet gateways and create a new internet gateway.
+After deleting, I found that a new nameless internet gateway attached to the VPC is automatically created.
+So, I named the internet gateway `InternetGateway`.
+
+- Choose the internet gateway
+- "Action", "Manage tags", "Add a new tag"
+
+| Key  | Value           |
+| ---- | --------------- |
+| Name | InternetGateway |
+
+- Choose the route table `RouteTable`
+- "Action", "Edit routes"
+
+| Destination    | Target                             | Status | propagated |
+| -------------- | ---------------------------------- | ------ | ---------- |
+| 192.168.0.0/24 | local                              | active | no         |
+| 0.0.0.0/0      | Internet Gateway `InternetGateway` | -      | no         |
+
+- Save the routes
+- "Connect with a subnet", "Edit connection with a subnet"
+- Choose the subnet `PublicSubnet`
+- Save the connection
+
+#### Connect with the EC2 by SSH
+
+- "Service", "Computing", "EC2"
+
+I confirmed that the EC2's public IPv4 address is 54.250.198.82.
+I succeeded in connecting to the EC2 with following command.
+
+```
+$ ssh -i <private key> ec2-user@54.250.198.82
+```
+
+And I added following lines to `%HOMEDRIVE%%HOMEPATH%\.ssh\config` on a windows host.
+
+```
+Host 54.250.198.82
+	HostName 54.250.198.82
+	IdentityFile ~/.ssh/AWS/KeyPair.pem
+	User ec2-user
+```
+
+Now, I can connect to the EC2 with following command.
+
+```
+$ ssh 54.250.198.82
+```
+
