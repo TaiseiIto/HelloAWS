@@ -36,19 +36,42 @@ Then, "VPC not found" even though I certainly created a VPC.
 So, I withheld the problem and went to the next step.
 
 #### Create a EC2
+
 - "Service", "Computing", "EC2"
 - "Instance"
 - "Start a instance"
 - Set machine image `Amazon Linuz x86-64`
 - Set instance type `t2.micro`
-- "Next step: determine instance details"
+- "Next step: Determine instance details"
 - Set number of instance `1`
 - No spot instance request
 - Locate the EC2 on the subnet `PublicSubnet` in the VPC `HelloAWS`
 - Enable public IP automatic assignment
 - Add a storage
-- "Next step: add tags"
+- "Next step: Add tags"
 
 | Key  | Value    |
 | ---- | -------- |
 | Name | HelloAWS |
+
+- "Next step: Set a security group"
+- Set the security group name `SecurityGroup`
+- Set the secyrity group description `security group for HelloAWS`
+
+| type | protocol | port range | source    | destination       |
+| ---- | -------- | ---------- | --------- | ----------------- |
+| SSH  | TCP      | 22         | 0.0.0.0/0 | SSH for HelloAWS  |
+| HTTP | TCP      | 80         | 0.0.0.0/0 | HTTP for HelloAWS |
+
+- "Check and create"
+- "Start"
+- "Create a new key pair"
+- Set the key pair type RSA
+- Set the key pair name `KeyPair`
+- "Download the key pair"
+
+Then, I kept the private key `KeyPair.pem` on my private repository.
+
+- "Create an instance"
+- "Display the instance"
+
