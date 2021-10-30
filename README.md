@@ -136,3 +136,23 @@ Now, I can connect to the EC2 with following command.
 $ ssh 54.250.198.82
 ```
 
+### 2021/10/30
+
+#### implement `make login`
+
+I wrote following `Makefile`.
+
+```
+SERVER = 54.250.198.82
+SSH = ssh
+
+login:
+	$(SSH) $(SERVER)
+
+```
+
+Now, I can connect to the EC2 with following command.
+
+```
+$ make login
+```
