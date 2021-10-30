@@ -200,6 +200,6 @@ $ git clone git@github.com:TaiseiIto/HelloAWS.git
 Finally, I initialized git configuration
 
 ```
-$ ~/HelloAWS/git/initconfig.sh
+$ ~/HelloAWS/git/init_config.sh
 ```
 
