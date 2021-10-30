@@ -190,9 +190,16 @@ $ chmod 600 ~/.ssh/AWS/KeyPair.pem
 $ chmod 600 ~/.ssh/GitHub/github
 ```
 
-And I cloned this repository on the server.
+Then I cloned this repository on the server.
 
 ```
 $ cd ~
 $ git clone git@github.com:TaiseiIto/HelloAWS.git
 ```
+
+Finally, I initialized git configuration
+
+```
+$ ~/HelloAWS/git/initconfig.sh
+```
+
