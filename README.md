@@ -118,7 +118,7 @@ I confirmed that the EC2's public IPv4 address is 54.250.198.82.
 I succeeded in connecting to the EC2 with following command.
 
 ```
-$ ssh -i <private key> ec2-user@54.250.198.82
+> ssh -i <private key> ec2-user@54.250.198.82
 ```
 
 And I added following lines to `%HOMEDRIVE%%HOMEPATH%\.ssh\config` on a windows host.
@@ -133,12 +133,12 @@ Host 54.250.198.82
 Now, I can connect to the EC2 with following command.
 
 ```
-$ ssh 54.250.198.82
+> ssh 54.250.198.82
 ```
 
 ### 2021/10/30
 
-#### implement `make login`
+#### Implement `make login`
 
 I wrote following `Makefile`.
 
@@ -154,5 +154,45 @@ login:
 Now, I can connect to the EC2 with following command.
 
 ```
-$ make login
+> make login
+```
+
+I can't enter the server through `make login` even though I can do `ssh` directly.
+Specifically, `make` can't find `C:\Windows\System32\OpenSSH\ssh.exe`.
+I think this problem is because of Windows default 32bit ssh (in my case `C:\Windows\System32\OpenSSH\ssh.exe`).
+So, I installed [OpenSSH-Win64](https://github.com/PowerShell/Win32-OpenSSH/releases) and it worked well.
+
+#### Clone this repository on the EC2
+
+I entered the server and install git by following commands.
+
+```
+> make login
+$ sudo yum update -y
+$ sudo yum install git -y
+```
+
+And I returned to the windows host in order to deploy ssh configuration and private keys from the windows host.
+
+```
+$ exit
+> scp %HOMEDRIVE%%HOMEPATH%\.ssh\config ec2-user@54.250.198.82:~/.ssh
+> scp -r %HOMEDRIVE%%HOMEPATH%\.ssh\AWS ec2-user@54.250.198.82:~/.ssh
+> scp -r %HOMEDRIVE%%HOMEPATH%\.ssh\GitHub ec2-user@54.250.198.82:~/.ssh
+```
+
+I entered the server again and set access rights of the configuration and private keys.
+
+```
+> make login
+$ chmod 600 ~/.ssh/config
+$ chmod 600 ~/.ssh/AWS/KeyPair.pem
+$ chmod 600 ~/.ssh/GitHub/github
+```
+
+And I cloned this repository on the server.
+
+```
+$ cd ~
+$ git clone git@github.com:TaiseiIto/HelloAWS.git
 ```
