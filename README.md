@@ -210,3 +210,15 @@ $ ~/HelloAWS/git/init_config.sh
 I listed necessary packages and made an automatic installation script `~/HelloAWS/ec2/install_packages.sh`.
 Then I executed the script to install docker and so on.
 
+#### Start docker
+
+I wrote a Makefile `~/HelloAWS/ec2/Makefile` to start docker, list images and containers, and stop docker.
+
+```
+$ cd ~/HelloAWS/ec2
+$ make start-docker
+$ make docker-images # list docker images
+$ make docker-containers # list docker containers
+$ make stop-docker
+```
+
