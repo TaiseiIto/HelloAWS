@@ -233,3 +233,11 @@ $ make restart-apache
 $ make stop-apache
 ```
 
+And I confirmed that apache default page worked.
+
+```
+$ make start-apache -C ~/HelloAWS/ec2
+$ exit
+> make show-page -C %THIS_REPOSOTORY_PATH%\terminal
+```
+
