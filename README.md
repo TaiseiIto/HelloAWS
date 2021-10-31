@@ -261,7 +261,9 @@ $ exit
 
 - "Save the rules"
 
-##### Get a Domain
+##### Get a domain
+
+I got a domain referring to [this page](https://aws.amazon.com/jp/getting-started/hands-on/get-a-domain/).
 
 ##### Install Python3
 
@@ -272,4 +274,6 @@ I cloned a repository.
 ```
 $ cd ~/HelloAWS/ec2
 $ git submodule add git@github.com:letsencrypt/letsencrypt.git
+$ git submodule update --init --recursive
 ```
+
