@@ -140,7 +140,7 @@ Now, I can connect to the EC2 with following command.
 
 #### Implement `make login`
 
-I wrote following `Makefile`.
+I wrote following `HelloAWS/terminal/Makefile` on this repository.
 
 ```
 SERVER = 54.250.198.82
