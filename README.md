@@ -203,3 +203,10 @@ Finally, I initialized git configuration
 $ ~/HelloAWS/git/init_config.sh
 ```
 
+### 2021/10/31
+
+#### Install packages on the EC2
+
+I listed necessary packages and made an automatic installation script `~/HelloAWS/ec2/install_packages.sh`.
+Then I executed the script to install docker and so on.
+
