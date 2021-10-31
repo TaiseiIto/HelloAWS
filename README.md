@@ -222,6 +222,7 @@ $ make docker-containers # list docker containers
 $ make restart-docker
 $ make stop-docker
 ```
+
 #### Start apache
 
 Additionally, I make commands to control apache.
@@ -241,3 +242,21 @@ $ exit
 > make show-page -C %THIS_REPOSOTORY_PATH%\terminal
 ```
 
+#### Handle HTTPS
+
+##### Open HTTPS port
+
+- Go to [AWS](https://aws.amazon.com).
+- Sign in console.
+- "Service", "Computing", "EC2"
+- "Network and security", "Security group"
+- Choose the security group `SecurityGroup`
+- "Action", "Edit inbound rule"
+
+| type  | protocol | port range | source    | destination        |
+| ----- | -------- | ---------- | --------- | ------------------ |
+| HTTP  | TCP      | 80         | 0.0.0.0/0 | HTTP for HelloAWS  |
+| HTTPS | TCP      | 443        | 0.0.0.0/0 | HTTPS for HelloAWS |
+| SSH   | TCP      | 22         | 0.0.0.0/0 | SSH for HelloAWS   |
+
+- "Save the rules"
