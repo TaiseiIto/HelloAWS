@@ -219,6 +219,17 @@ $ cd ~/HelloAWS/ec2
 $ make start-docker
 $ make docker-images # list docker images
 $ make docker-containers # list docker containers
+$ make restart-docker
 $ make stop-docker
+```
+#### Start apache
+
+Additionally, I make commands to control apache.
+
+```
+$ cd ~/HelloAWS/ec2
+$ make start-apache
+$ make restart-apache
+$ make stop-apache
 ```
 
