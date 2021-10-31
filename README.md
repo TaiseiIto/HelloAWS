@@ -260,3 +260,7 @@ $ exit
 | SSH   | TCP      | 22         | 0.0.0.0/0 | SSH for HelloAWS   |
 
 - "Save the rules"
+
+##### Install Python3
+
+##### Install letsencript
