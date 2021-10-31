@@ -261,6 +261,15 @@ $ exit
 
 - "Save the rules"
 
+##### Get a Domain
+
 ##### Install Python3
 
 ##### Install letsencript
+
+I cloned a repository.
+
+```
+$ cd ~/HelloAWS/ec2
+$ git submodule add git@github.com:letsencrypt/letsencrypt.git
+```

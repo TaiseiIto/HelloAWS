@@ -1,0 +1,3 @@
+[submodule "ec2/letsencrypt"]
+	path = ec2/letsencrypt
+	url = git@github.com:letsencrypt/letsencrypt.git
