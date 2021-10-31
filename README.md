@@ -208,7 +208,7 @@ $ ~/HelloAWS/git/init_config.sh
 #### Install packages on the EC2
 
 I listed necessary packages and made an automatic installation script `~/HelloAWS/ec2/install_packages.sh`.
-Then I executed the script to install docker and so on.
+Then I executed the script to install docker, httpd and so on.
 
 #### Start docker
 

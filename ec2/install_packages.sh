@@ -1,7 +1,7 @@
 #!/bin/sh
 
 check_package_file=check_package.txt
-packages="docker git make vim"
+packages="docker git httpd make vim"
 
 sudo yum update -y
 
