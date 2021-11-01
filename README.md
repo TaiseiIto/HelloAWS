@@ -288,9 +288,26 @@ Then, I got a elastic IP address `54.248.152.50`.
 
 Then, I can access the EC2 `HelloAWS` by the elastic IP `54.248.152.50` on HTTP and SSH.
 
-##### Get a domain
+##### Associate a domain to the elastic IP
 
-I got a domain referring to [this page](https://aws.amazon.com/jp/getting-started/hands-on/get-a-domain/).
+I associated a domain `ito-taisei.com` to the elastic IP `54.248.152.50` referring to [this page](https://dev.classmethod.jp/articles/route53-domain-onamae/).
+
+- "Service", "Networking and content delivery", "Route53"
+- "Create a host zone"
+- Set the domain name `ito-taisei.com`
+- Set the type public host zone
+- Set following tag
+
+| Key  | Value    |
+| ---- | -------- |
+| Name | HostZone |
+
+- The following name servers are assigned automatically.
+
+- `ns-750.awsdns-29.net`
+- `ns-1524.awsdns-62.org`
+- `ns-43.awsdns-05.com`
+- `ns-1762.awsdns-28.co.uk`
 
 ##### Install Python3
 
