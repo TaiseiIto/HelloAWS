@@ -261,6 +261,33 @@ $ exit
 
 - "Save the rules"
 
+##### Get a elastic IP address
+
+I got a elastic IP address referring to [this page](https://aws.amazon.com/jp/getting-started/hands-on/get-a-domain/).
+
+- "Service", "Computing", "EC2"
+- "Network and security", "Elastic IP"
+- "Allocate Elastic IP Address"
+- Add a tag option
+
+| Key  | Value     |
+| ---- | --------- |
+| Name | ElasticIP |
+
+- "Allocate"
+
+Then, I got a elastic IP address `54.248.152.50`.
+
+##### Associate the elastic IP address to the EC2
+
+- Select the elastic IP address
+- "Action", "Associate elastic IP address"
+- Choose a instance , the EC2 `HelloAWS`, to associate
+- Assign a private IP address `192.168.0.67` of the EC2 `HelloAWS` on the VPC `HelloAWS` to associate
+- "Associate"
+
+Then, I can access the EC2 `HelloAWS` by the elastic IP `54.248.152.50` on HTTP and SSH.
+
 ##### Get a domain
 
 I got a domain referring to [this page](https://aws.amazon.com/jp/getting-started/hands-on/get-a-domain/).

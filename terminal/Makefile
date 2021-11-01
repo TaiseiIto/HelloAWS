@@ -1,4 +1,4 @@
-SERVER = 54.250.198.82
+SERVER = 54.248.152.50
 SSH = ssh
 URL = http://$(SERVER):80/
 
